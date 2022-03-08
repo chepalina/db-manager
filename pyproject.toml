@@ -1,0 +1,92 @@
+[tool.poetry]
+name = "db_manager"
+version = "0.1.0"
+description = "FastAPI app to manage Postgre DB"
+authors = ["polina.maslovskaya90@yandex.by"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.68.0"
+uvicorn = "^0.14.0"
+python-dotenv = "^0.19.0"
+loguru = "^0.5.3"
+sqlalchemy = "^1.4.25"
+alembic = "^1.6.5"
+asyncpg = "^0.24.0"
+pytoml = "^0.1.21"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.9.6"
+pytest = "^6.2.4"
+mypy = "^0.910"
+pycodestyle = "^2.7.0"
+sqlalchemy2-stubs = "^0.0.2-alpha.8"
+types-toml = "^0.10.0"
+black = "^21.7b0"
+pytest-asyncio = "^0.15.1"
+requests = "^2.26.0"
+pytest-cov = "^2.12.1"
+pydocstyle = "^6.1.1"
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.pydocstyle]
+select = [
+    # Missing Docstrings
+    # "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D103", # Missing docstring in public function
+    # "D104", # Missing docstring in public package
+    "D105", # Missing docstring in magic method
+    # "D106", # Missing docstring in public nested class
+    "D107", # Missing docstring in __init__
+
+    # Whitespace Issues
+    "D200", # One-line docstring should fit on one line with quotes
+    "D201", # No blank lines allowed before function docstring
+    # "D202", # No blank lines allowed after function docstring
+    # "D203", # 1 blank line required before class docstring
+    "D204", # 1 blank line required after class docstring
+    "D205", # 1 blank line required between summary line and description
+    "D206", # Docstring should be indented with spaces, not tabs
+    "D207", # Docstring is under-indented
+    "D208", # Docstring is over-indented
+    "D209", # Multi-line docstring closing quotes should be on a separate line
+    "D210", # No whitespaces allowed surrounding docstring text
+    "D211", # No blank lines allowed before class docstring
+    "D212", # Multi-line docstring summary should start at the first line
+    # "D213", # Multi-line docstring summary should start at the second line
+    "D214", # Section is over-indented
+    "D215", # Section underline is over-indented
+
+    # Quotes Issues
+    "D300", # Use “”“triple double quotes”“”
+    "D301", # Use r”“” if any backslashes in a docstring
+    # "D302", # Use u”“” for Unicode docstrings
+
+    # Docstring Content Issues
+    "D400", # First line should end with a period
+    "D401", # First line should be in imperative mood; try rephrasing
+    "D402", # First line should not be the function’s “signature”
+    "D403", # First word of the first line should be properly capitalized
+    "D404", # First word of the docstring should not be This
+    "D405", # Section name should be properly capitalized
+    "D406", # Section name should end with a newline
+    # "D407", # Missing dashed underline after section
+    "D408", # Section underline should be in the line following the section’s name
+    "D409", # Section underline should match the length of its name
+    "D410", # Missing blank line after section
+    "D411", # Missing blank line before section
+    # "D412", # No blank lines allowed between a section header and its content
+    "D413", # Missing blank line after last section
+    "D414", # Section has no content
+]
+# All dirs except versions
+match-dir="^(?!versions).*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
