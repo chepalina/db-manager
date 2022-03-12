@@ -1,5 +1,6 @@
-from utils.pyproject import PyProjectData
 from pydantic import BaseModel
+
+from utils.pyproject import PyProjectData
 
 PYPROJECT = PyProjectData.get_settings()
 
@@ -10,7 +11,7 @@ class AppSettings(BaseModel):
     # Имя среды
     tag: str = PYPROJECT.tool.poetry.name
     # Тег среды
-    env: str = 'PROD'
+    env: str = "PROD"
     # Версия приложения
     version: str = PYPROJECT.tool.poetry.version
 

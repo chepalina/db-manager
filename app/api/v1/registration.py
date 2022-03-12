@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from app.api.v1.routers import schemas
 from app.settings.app import AppSettings
 
 APP_SETTINGS = AppSettings()
@@ -12,3 +13,5 @@ api_v1 = FastAPI(
     docs_url="/",
     redoc_url=None,
 )
+
+api_v1.include_router(schemas.router)

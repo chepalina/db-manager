@@ -13,7 +13,7 @@ class ServerSettings(BaseModel):
     # Уровень логирования
     log_level: str = "info"
     # Хост приложения
-    host: str = '0.0.0.0'
+    host: str = "0.0.0.0"
     # Порт приложения
     port: int = 59999
 

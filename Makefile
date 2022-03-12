@@ -6,10 +6,11 @@ CURRENT_DIRECTORY = $(shell pwd)
 api:
 	python manage.py start api
 
-migration:
-	export PYTHONPATH=$(CURRENT_DIRECTORY) \
-	&& export FLASK_APP=$(CURRENT_DIRECTORY)/manage.py \
-	&& flask db upgrade
+make-migration:
+	python manage.py makemigration init_schema
+
+migrate:
+	python manage.py migrate up
 
 # Unit тесты
 unit-test:
