@@ -4,6 +4,8 @@ from app.api.routers.system import router as system_router
 from app.api.v1.registration import API_V1_PREFIX, api_v1
 from app.settings.app import AppSettings
 
+# from app.db import database
+
 APP_SETTINGS = AppSettings()
 
 
@@ -16,8 +18,13 @@ app = FastAPI(
 
 
 # @app.on_event("startup")
-# async def startup_event() -> None:
-#     async_engine_singleton()
+# async def startup():
+#     await database.connect()
+#
+#
+# @app.on_event("shutdown")
+# async def shutdown():
+#     await database.disconnect()
 
 # Подключение системного роутера
 app.include_router(system_router)

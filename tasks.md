@@ -15,6 +15,8 @@ Tasks:
 8. [ ] Domain (id)
 9. [ ] Make db config in one place
 10. [ ] Multiple db management possibility 
+11. [ ] Create auto builds
+12. [ ] Pagination
 
 Tables:
 - DB
@@ -26,3 +28,8 @@ Tables:
 - Schemas
    - name
    - owner
+
+API schemas:
+get /schemas - ids
+get /schemas/id - model
+get 

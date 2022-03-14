@@ -9,7 +9,7 @@ class ServerSettings(BaseModel):
     # Количество воркеров сервера
     workers: int = 1
     # Флаг запуска сервера в режиме разработки
-    debug: bool = False
+    debug: bool = True
     # Уровень логирования
     log_level: str = "info"
     # Хост приложения

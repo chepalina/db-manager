@@ -5,7 +5,8 @@ from typing import TYPE_CHECKING
 
 from loguru import logger
 
-from utils.logger.filters import RequireDebugFalseFilter, RequireDebugTrueFilter
+from utils.logger.filters import (RequireDebugFalseFilter,
+                                  RequireDebugTrueFilter)
 
 if TYPE_CHECKING:
     from loguru import Message, Record

@@ -1,7 +1,15 @@
 # pylint: disable=invalid-name
-
 from fastapi import Request, status
+from fastapi.applications import FastAPI
 from fastapi.responses import JSONResponse, Response
+
+
+def add_all_error_handlers(app: FastAPI) -> None:
+    """Добавить все обработчики ошибок из данного роута к приложению.
+
+    :param app: приложение FastAPI
+    """
+    app.add_exception_handler(Exception, unknown_error_handler)
 
 
 async def unknown_error_handler(_: Request, exc: Exception) -> Response:

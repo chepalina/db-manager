@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from app.api.v1.handlers import add_all_error_handlers
 from app.api.v1.routers import schemas
 from app.settings.app import AppSettings
 
@@ -13,5 +14,8 @@ api_v1 = FastAPI(
     docs_url="/",
     redoc_url=None,
 )
+
+add_all_error_handlers(api_v1)
+
 
 api_v1.include_router(schemas.router)
