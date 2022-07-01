@@ -33,3 +33,6 @@ API schemas:
 get /schemas - ids
 get /schemas/id - model
 get 
+
+
+install packages

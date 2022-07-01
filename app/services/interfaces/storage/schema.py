@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import Protocol
 
-from app.services.schemas.schema_entity import SchemaEntitySchema
+from app.services.entities.schema_entity import SchemaEntitySchema
 
 
 class SchemaEntityInterface(Protocol):

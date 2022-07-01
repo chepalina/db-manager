@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import BaseModel
 
 
-class SchemaEntitySchema(BaseModel):
+class SchemaEntity(BaseModel):
 
     id: int
     name: str

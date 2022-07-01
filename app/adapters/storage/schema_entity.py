@@ -4,14 +4,14 @@ from typing import TYPE_CHECKING, Type
 from sqlalchemy import select
 
 from app.models.schemas import SchemaModel
-from app.services.interfaces.schema_entity import SchemaEntitySchema
+from app.services.interfaces.storage.schema_entity import SchemaEntitySchema
 
 if TYPE_CHECKING:
     from sqlalchemy.ext.asyncio.session import AsyncSession
 
 
 @dataclass
-class SchemaEntityCRUD:
+class SchemaEntityAdapter:
     session: "AsyncSession"
     model: Type[SchemaModel] = SchemaModel
 

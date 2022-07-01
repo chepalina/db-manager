@@ -4,8 +4,8 @@ from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncEngine
 
 from app import dependencies
-from app.crud.schema_entity import SchemaEntityCRUD
-from app.services.schemas.schema_entity import SchemaEntitySchema
+from app.adapters.storage import SchemaEntityCRUD
+from app.services.entities.schema_entity import SchemaEntitySchema
 
 EVENT_TAG = "schemas"
 EVENTS_PREFIX = f"/{EVENT_TAG}"
